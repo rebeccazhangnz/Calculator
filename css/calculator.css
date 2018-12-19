@@ -1,0 +1,86 @@
+body{
+    background-color: beige;
+}
+
+.container{
+background-color: gray;
+width: 360px;
+height: 460px;
+position: relative;
+padding: 15px;
+padding-bottom: 30px;
+border-radius: 10px;
+top:100px;
+left:40%;
+box-shadow: 0px 3px 5px 8px rgba(0, 0, 0, 0.8);
+
+}
+
+.row{
+    display: flex;
+    align-content: stretch;
+}
+
+#display{
+    background-color: black;
+    color:white;
+    border-color: white;
+    width:100%;
+    height: 60px;
+    font-size: 50px;
+    font-family: 'Black Ops One', cursive;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.num-btn{
+    width: 90px;
+    height: 80px;
+    font-size: 40px;
+    font-family: 'Anonymous Pro', monospace;
+    background-color: rgba(255, 136, 0, 0.699);
+    color: white;
+    border-radius: 10px;
+}
+
+.op-btn{
+    width: 90px;
+    height: 80px;
+    font-size: 40px;
+    font-family: 'Anonymous Pro', monospace;
+    background-color: rgba(255, 136, 0, 0.699);
+    color: white;
+    border-radius: 10px;
+}
+
+.clr-btn{
+    width: 90px;
+    height: 80px;
+    font-size: 40px;
+    font-family: 'Anonymous Pro', monospace;
+    background-color: rgba(255, 136, 0, 0.699);
+    color: white;
+    border-radius: 10px;
+}
+
+
+#zero{
+    width:180px;
+}
+
+#equals{
+    height: 160px;
+    position: relative;
+    top:-80px;
+}
+
+#clear{
+    border-radius: 50%;
+    background-color: black;
+}
+
+#clearCE{
+    border-radius: 50%;
+    background-color: black;
+}
