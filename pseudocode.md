@@ -1,29 +1,22 @@
-1. Create calculator buttons and display in HTML and CSS.
+```
+// Create calculator buttons and display in HTML and CSS.
 
-2. Pseudocode
+// create a display window
 
-//creates an array that holds the input activites
+// create number and operation buttons
 
-//define a variable that holds the anwser of the calculations
+// create eventlistner for each of the buttons
 
-//create a function that display the inputs/entries: when the calculator button is "click" return the number of the button to the display.
+// create function that shows the input when the button is clicked.
 
-//if input is an integer or decimal then display input
+// create function that coverts integer to decimal number if decimal point is clicked.
 
-// Got some symbol other than equals, add temp to our entries
+// create function that clear all the inputs when "AC" button is clicked.
 
-// then add our current symbol and clear temp
+// create function that clear current inputs when "CE" button is clicked.
 
-// Clear last entry
+// create function that perform calculations and return the calculated value when the equal button is clicked.
 
-// Change multiply symbol to work with eval
-
-// Change divide symbol to work with eval
-
-// Got the equals sign, perform calculation
-
-// Swap the '-' symbol so text input handles it correctly
-
-// Push number
+```
 
 
