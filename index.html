@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
-    <script src="calculator.js"></script>
+    
     <title>Calculator</title>
 </header>
 
@@ -20,38 +20,38 @@
             <input id="display">
         </div>
         <div class = "row">
-            <button id="clear" class = "clr-btn">AC</button>
-            <button id="clearCE" class = "clr-btn">CE</button>
-            <button id="multiply" class = "op-btn">x</button>
-            <button id="divide" class = "op-btn">/</button>
+            <button id="clear" class = "clr-btn" onclick="clearDisplay()">AC</button>
+            <button id="clearCE" class = "clr-btn"onclick="clearInput()">CE</button>
+            <button id="multiply" class = "op-btn"value ="x" onclick="updateDisplay(this.value);">x</button>
+            <button id="divide" class = "op-btn" value ="/" onclick="updateDisplay(this.value);">/</button>
         </div>
         <div class = "row">
-            <button id="seven" class = "num-btn">7</button>
-            <button id="eight" class = "num-btn">8</button>
-            <button id="nine" class = "num-btn">9</button>
-            <button id="substract" class = "op-btn">-</button>
+            <button id="seven" class = "num-btn" value ="7" onclick="updateDisplay(this.value);">7</button>
+            <button id="eight" class = "num-btn" value ="8" onclick="updateDisplay(this.value);">8</button>
+            <button id="nine" class = "num-btn" value ="9" onclick="updateDisplay(this.value);" >9</button>
+            <button id="substract" class = "op-btn"value ="-" onclick="updateDisplay(this.value);">-</button>
         </div>
         <div class = "row">
-            <button id="four" class = "num-btn">4</button>
-            <button id="five" class = "num-btn">5</button>
-            <button id="six"  class = "num-btn">6</button>
-            <button id="add"  class = "op-btn">+</button>
+            <button id="four" class = "num-btn" value ="4" onclick="updateDisplay(this.value);">4</button>
+            <button id="five" class = "num-btn" value ="5" onclick="updateDisplay(this.value);">5</button>
+            <button id="six"  class = "num-btn" value ="6" onclick="updateDisplay(this.value);">6</button>
+            <button id="add"  class = "op-btn" value ="+" onclick="updateDisplay(this.value);">+</button>
         </div>
         
         <div class = "row">
-            <button id="one" class = "num-btn">1</button>
-            <button id="two" class = "num-btn">2</button>
-            <button id="three"class = "num-btn">3</button>
+            <button id="one" class = "num-btn" value ="1" onclick="updateDisplay(this.value);">1</button>
+            <button id="two" class = "num-btn" value ="2" onclick="updateDisplay(this.value);">2</button>
+            <button id="three"class = "num-btn" value ="3" onclick="updateDisplay(this.value);">3</button>
         </div>
 
         <div class = "row">
-            <button id="zero" class = " num-btn" >0</button>
-            <button id="decimal" class = "num-btn">.</button>
-            <button id="equals" class = "op-btn">=</button>
+            <button id="zero" class = " num-btn" value ="0" onclick="updateDisplay(this.value);">0</button>
+            <button id="decimal" class = "num-btn" value = "." onclick="updateDisplay(this.value);">.</button>
+            <button id="equals" class = "op-btn" value = "=" onclick="updateDisplay(this.value);">=</button>
         </div>
               
     </div>
 
 </body>
 </html>
-
+<script src="calculator.js"></script>

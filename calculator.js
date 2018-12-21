@@ -1,52 +1,79 @@
-/*At any time, pressing the clear button clears the input and output values, and returns the calculator
- to its initialized state; 0 should be shown in the element with the id of display.*/
-
-var display = document.getElementById("display");
-var acBtn = document.getElementById("clear");
-var ceBtn = document.getElementById("clearCE");
-
-var zeroBtn = document.getElementById("zero");
-var oneBtn = document.getElementById("one");
-var twoBtn = document.getElementById("two");
-var threeBtn = document.getElementById("three");
-var fourBtn = document.getElementById("four");
-var fiveBtn = document.getElementById("five");
-var sixBtn = document.getElementById("six");
-var sevenBtn = document.getElementById("seven");
-var eightBtn = document.getElementById("eight");
-var nineBtn = document.getElementById("nine");
-var decimalBtn = document.getElementById("decimal");
-
-var addBtn = document.getElementById("add");
-var subBtn = document.getElementById("substract");
-var multiplyBtn = document.getElementById("multiply");
-var divideBtn = document.getElementById("divide");*/
+//create function that shows the input when the button is clicked.
+var displayValue = document.getElementById("display");
 
 
-var displayValue;
-var InputValue;
-var operationArray = [];
+function updateDisplay(value) {
+    var zeroCheck = "";
+    var dotCheck = "";
 
-var updateDisplay = (clickObj) => {
-    var btnText = clickObj.target.innerText;
-    displayValue += btnText;
-    display.innerText = displayValue;
+    displayValue.value += value;
 
+    zeroCheck = displayValue.value;
+    reduceInitialZero(zeroCheck);
+    dotCheck = displayValue.value;
+    showDecimal(dotCheck);
+    syntaxCheck = displayValue.value;
+    checkSyntaxError(syntaxCheck);
+} 
+// When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
+function reduceInitialZero(zeroCheck){
+
+    while(zeroCheck.length > 1 && zeroCheck.charAt(0)==="0"){
+        if(zeroCheck.charAt(1) === "."){
+               return zeroCheck;
+           }else{
+              zeroCheck = zeroCheck.substr(1);
+           }
+        }
+        return displayValue.value = zeroCheck;
+    }
+
+
+/*When the decimal element is clicked, a . should append to the currently displayed value; two . 
+in one number should not be accepted.*/
+
+function showDecimal(dotCheck){
+   if(dotCheck.charAt(0)==="."){
+        dotCheck = "0"+ dotCheck;
+       }else{
+       dotCheck = dotCheck;
+  }
+  return displayValue.value = dotCheck;
+}
+
+function checkSyntaxError(syntaxCheck){
+    showDecimal(syntaxCheck);
+    //console.log(syntaxCheck);
+    var count = 0;
+    syntaxCheck = syntaxCheck.toString();
+    for (var i=0;i<syntaxCheck.length;i++){
+        //console.log(i);
+        if(syntaxCheck.charAt(i) === "."){
+            count++; }
+    }
+
+    if (count>1){
+        displayValue.value = "Syntax ERROR";
+    }else{
+        displayValue.value = syntaxCheck;
+    }
+return displayValue.value;
 }
 
 
-acBtn.addEventListener('click',clearDisplayValue);
-ceBtn.addEventListener('click',clearInputValue)
 
-zeroBtn.addEventListener('click',updateDisplay)
-oneBtn.addEventListener('click',updateDisplay);
-twoBtn.addEventListener('click',updateDisplay);
-threeBtn.addEventListener('click',updateDisplay);
-fourBtn.addEventListener('click',updateDisplay);
-fiveBtn.addEventListener('click',updateDisplay);
-sixBtn.addEventListener('click',updateDisplay);
-sevenBtn.addEventListener('click',updateDisplay);
-eightBtn.addEventListener('click',updateDisplay);
-nineBtn.addEventListener('click',updateDisplay);
-decimalBtn.addEventListener('click',updateDisplay);
+//create function that clear all the inputs when "AC" button is clicked.
+function clearDisplay(){
+    displayValue.value = "";
+}
 
+// create function that clear current inputs when "CE" button is clicked.
+
+
+// create function that perform calculations and return the calculated value when the equal button is clicked.
+function calculate(){
+    var result = 0;
+    result = displayValue.value;
+    displayValue.value = "";
+    displayValue.value = eval(result);
+    }
