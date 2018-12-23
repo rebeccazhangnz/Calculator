@@ -1,5 +1,6 @@
 //create function that shows the input when the button is clicked.
-var displayValue = document.getElementById("display");
+var displayValue = document.getElementById("input");
+var tempValue = document.getElementById("temp");
 
 
 function updateDisplay(value) {
@@ -7,7 +8,6 @@ function updateDisplay(value) {
     var dotCheck = "";
 
     displayValue.value += value;
-
     zeroCheck = displayValue.value;
     reduceInitialZero(zeroCheck);
     dotCheck = displayValue.value;
@@ -60,35 +60,31 @@ function checkSyntaxError(syntaxCheck){
 return displayValue.value;
 }
 
-
-
 //create function that clear all the inputs when "AC" button is clicked.
-function clearDisplay(){
+function clearAll(){
+    tempValue.value = "";
     displayValue.value = "";
 }
 
 // create function that clear current inputs when "CE" button is clicked.
-
+function clearInput(){
+    displayValue.value = "";
+}
 
 // create function that perform calculations and return the calculated value when the equal button is clicked.
+//should be able to perform any operation (+, -, *, /) on numbers containing decimal points.
+
+function updateTemp(operator){
+    tempValue.value += displayValue.value + operator;
+    displayValue.value = "";
+}
+
 function calculate(){
     var result = 0;
-    result = displayValue.value;
+    tempValue.value += displayValue.value;
+    result = tempValue.value;
     displayValue.value = "";
     displayValue.value = eval(result);
+    tempValue.value = "";
     }
 
-
-
-//should be able to perform any operation (+, -, *, /) on numbers containing decimal points.
-//If 2 or more operators are entered consecutively, the operation performed should be the last operator entered.
-//User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
-/*User Story #15: My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, 
-but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).*/
-
-/*var operatorBtn = document.getElementsByClassName("op-btn");
-var operationBtnArr = [];
-for(var i=0;i<operatorBtn.length;i++){
-    operationBtnArr[i] = operatorBtn[i].value;
-    console.log(i);
-}*/
