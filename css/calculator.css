@@ -5,7 +5,7 @@ body{
 .container{
 background-color: gray;
 width: 360px;
-height: 460px;
+height: 480px;
 position: relative;
 padding: 15px;
 padding-bottom: 30px;
@@ -19,6 +19,7 @@ box-shadow: 0px 3px 5px 8px rgba(0, 0, 0, 0.8);
 .row{
     display: flex;
     align-content: stretch;
+    flex-wrap: wrap;
 }
 
 #display{
@@ -26,13 +27,48 @@ box-shadow: 0px 3px 5px 8px rgba(0, 0, 0, 0.8);
     color:white;
     border-color: white;
     width:100%;
-    height: 60px;
+    height: 80px;
     font-size: 47.5px;
     font-family: 'Black Ops One', cursive;
     text-align: right;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+
+#temp{
+    display: block;
+    background-color: black;
+    color:white;
+    border-color: black;
+    width:100%;
+    height: 30px;
+    font-size: 28px;
+    font-family: 'Black Ops One', cursive;
+    text-align: right;
+    margin: 0px 0px 0px 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
+}
+
+#input{
+    display: block;
+    background-color: black;
+    color:white;
+    border-color: black;
+    width:100%;
+    height: 50px;
+    font-size: 48px;
+    font-family: 'Black Ops One', cursive;
+    text-align: right;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
+}
+
 
 .num-btn{
     width: 90px;
